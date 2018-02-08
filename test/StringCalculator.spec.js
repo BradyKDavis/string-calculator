@@ -1,5 +1,6 @@
 import {expect} from 'chai';
 import StringCalculator from '../src/StringCalculator';
+import Chance from 'chance';
 
 
 describe('StringCalculator', () => {
@@ -23,5 +24,9 @@ describe('StringCalculator add', () =>{
 
     it('should treat null arguments as 0 when null is passed in', () => {
         expect(StringCalculator.add(null, '42')).to.equal(42);
+    });
+
+    it('should treat malformed string arguments as 0 when it is passed in', () => {
+        expect(StringCalculator.add(Chance.sentence, '42')).to.equal(42);
     });
 })
