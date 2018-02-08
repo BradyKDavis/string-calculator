@@ -20,4 +20,8 @@ describe('StringCalculator add', () =>{
     it('should return sum when two string number arguments are passed in', () =>{
         expect(StringCalculator.add('55', '11')).to.equal(66);
     });
+
+    it('should treat null arguments as 0 when null is passed in', () => {
+        expect(StringCalculator.add(null, '42')).to.equal(42);
+    });
 })
